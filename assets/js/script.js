@@ -38,14 +38,16 @@ function runGame(gameType) {
  */
 function checkAnswer() {
     
-    let userAnswer = parseInt(document.getElementById ("answer-box").value);
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
     let calculatedAnswer = calculateCorrectAnswer();
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
         alert("Hey! You got it correct:)")
+        incrementScore();
     } else {
         alert(`Awwwww... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+        incrementWrongAnswer();
     }
  runGame(calculatedAnswer[1]);
 
@@ -64,19 +66,29 @@ function calculateCorrectAnswer() {
     if (operator === "+") {
         return[operand1 + operand2, "addition"];
     } else {
-        alert(`"Unimplemented" ${operator}`);
+        alert(`Unimplemented ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`
     
     }
 
 }
 
-
+/**
+ * gets the correct score from the dom and increments it by 1
+ */
 function incrementScore() {
 
-}
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
 
+}
+/**
+ * gets the current tally of incorrect answers from the dom and increments it by 1
+ */
 function incrementWrongAnswer() {
+
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;
 
 }
 
@@ -92,5 +104,9 @@ function displaySubtractQuestion() {
 }
 
 function displayMultiplyQuestion() {
+
+}
+
+function displayDivideQuestion() {
 
 }
