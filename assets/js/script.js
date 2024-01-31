@@ -62,10 +62,10 @@ function checkAnswer() {
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
-        alert("Hey! You got it correct:)")
+        alert("Well done, that answers correct! Go Again! And again! And again!")
         incrementScore();
     } else {
-        alert(`Awwwww... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+        alert(`Eeeeerrr WRONG! Wrong, wrong, wrong! ${userAnswer}? What were you thinking?? The correct answer was obviously ${calculatedAnswer[0]}!`);
         incrementWrongAnswer();
     }
  runGame(calculatedAnswer[1]);

@@ -90,6 +90,7 @@ body {
     width: 220px;
     height: 60px;
     font-family: "Raleway", sans-serif;
+    font-size: large;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     color: white;
@@ -162,18 +163,42 @@ body {
     background-color: darkgreen;
     color: white;
 }
-
+ /* original styling */
 .btn--gray {
     margin-top: 25px;
     background-color: #445361;
-    border: 1px transparent;
+    border: 1px solid transparent;
     border-radius: 20px;
+    position: relative;
+    
 }
 
-.btn--gray:active,
-.btn--gray:hover {
-    background-color: #0d1013;
+.btn--gray span {
+    
+    z-index: 1;
 }
+
+/* Style for the button when it's hovered over */
+.btn--gray:hover span {
+  background-color: #ff0000;
+  opacity: 0;
+}
+
+.btn--gray:hover:before {
+    content: "Are you sure?";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    background-color: #ff0000;
+    border: 1px solid transparent;
+    border-radius: 20px;
+   
+}
+
+
+
 
 /* --------- Media queries */
 
